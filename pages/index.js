@@ -4,8 +4,15 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div>
+      <div>
+        <div>충남삼성고등학교</div>
+        <div>Student Web</div>
+        <form>
+          <input type="text"/>
+        </form>
+
+      </div>
+    </div>
   )
 }
