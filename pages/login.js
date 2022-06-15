@@ -1,17 +1,12 @@
-import BottomBar from "../components/BottomBar"
-
 export default function Home() {
   return (
-    <div>
-      <div>
-        <div className="m-3 p-3 bg-blue-500 rounded-xl shadow-xl shadow-blue-500 text-white text-center font-bold">
-          충남삼성고등학교
-        </div>
-        <img src="public/school_logo.gif" alt="logo" />
-        <div>STUDENT WEB</div>
+    <div className="bg-slate-100">
+      <div className="bg-blue-500 text-white m-4 p-4 pl-6 rounded-xl">
+        <div className="text-2xl font-bold mb-4">충남삼성고등학교</div>
+        <div className="text-lg my-2">STUDENT WEB</div>
         <div>아이디</div>
         <form>
-          <input></input>
+          <input type="text" placeholder="아이디를 입력해주세요."></input>
         </form>
         <div>비밀번호</div>
         <form>
