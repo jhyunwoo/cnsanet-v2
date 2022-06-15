@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { forwardRef } from "react";
-import { Menu } from "@headlessui/react";
 
 export default function BottomBar() {
   return (
@@ -70,18 +68,5 @@ export default function BottomBar() {
         </div>
       </Link>
     </div>
-  );
-}
-
-function Example() {
-  return (
-    <Menu>
-      <Menu.Button>More</Menu.Button>
-      <Menu.Items>
-        <Menu.Item>
-          <MyLink href="/profile">Profile</MyLink>
-        </Menu.Item>
-      </Menu.Items>
-    </Menu>
   );
 }
