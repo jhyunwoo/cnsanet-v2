@@ -55,7 +55,6 @@ export default function BottomBar() {
       </Link>
       <Link href={"/chat"}>
         <div className="-m-2">
-          <div className="bg-sky-400 w-2 h-2 absoulte rounded-full animate-ping right-0 top-0"></div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 mx-4"
