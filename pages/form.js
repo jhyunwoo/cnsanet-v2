@@ -1,3 +1,9 @@
+import BottomBar from "../components/BottomBar";
+
 export default function Form() {
-  return <div>설문 조사</div>;
+  return (
+    <div>
+      <BottomBar />
+    </div>
+  );
 }
