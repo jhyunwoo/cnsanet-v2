@@ -6,12 +6,12 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
 const people = [
-  { id: 1, name: "Wade Cooper" },
-  { id: 2, name: "Arlene Mccoy" },
-  { id: 3, name: "Devon Webb" },
-  { id: 4, name: "Tom Cook" },
-  { id: 5, name: "Tanya Fox" },
-  { id: 6, name: "Hellen Schmidt" },
+  { id: 1, name: "김원우" },
+  { id: 2, name: "김수지" },
+  { id: 3, name: "이진필" },
+  { id: 4, name: "김진호" },
+  { id: 5, name: "진요한" },
+  { id: 6, name: "박영국" },
 ];
 
 export default function Chat() {
