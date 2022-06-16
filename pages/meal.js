@@ -382,7 +382,7 @@ export default function Meal() {
 
                         <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
                           <li>❤️{post.commentCount} | </li>
-                          <li>{post.kcal} Kcal</li>
+                          <li>{post.kcal} 𝐤𝐜𝐚𝐥</li>
                         </ul>
 
                         <a
