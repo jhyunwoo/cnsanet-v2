@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { LockClosedIcon, XIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function BottomBar() {
   return (
     <div className="flex flex-row justify-between bg-white/50 backdrop-blur-sm m-2 p-2 rounded-xl text-[#2e2a38] fixed bottom-0 right-0 left-0 shadow-xl">
-      <Link href={"/class"}>
+      <Link href={"/classes"}>
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +53,8 @@ export default function BottomBar() {
           </svg>
         </div>
       </Link>
-      <Link href={"/chat"}>
-        <div className="-m-2">
+      <Link href={"/chats"}>
+        <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 mx-4"
