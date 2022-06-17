@@ -1,133 +1,251 @@
 import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
-import { useState } from "react";
-import { Tab } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import { Combobox, Transition } from "@headlessui/react";
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+const people = [
+  { id: 1, name: "김원우" },
+  { id: 2, name: "김수지" },
+  { id: 3, name: "이진필" },
+  { id: 4, name: "김진호" },
+  { id: 5, name: "진요한" },
+  { id: 6, name: "박영국" },
+  { id: 7, name: "공순택" },
+  { id: 8, name: "박주현" },
+  { id: 9, name: "이정석" },
+  { id: 10, name: "김도훈" },
+  { id: 11, name: "맹사랑" },
+  { id: 12, name: "이대석" },
+];
 
-export default function Example() {
-  let [categories] = useState({
-    People: [
-      {
-        id: 1,
-        title: "Does drinking coffee make you smarter?",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
-      },
-      {
-        id: 2,
-        title: "So you've bought coffee... now what?",
-        date: "2h ago",
-        commentCount: 3,
-        shareCount: 2,
-      },
-    ],
-    Messages: [
-      {
-        id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
-      },
-      {
-        id: 2,
-        title: "The most innovative things happening in coffee",
-        date: "Mar 19",
-        commentCount: 24,
-        shareCount: 12,
-      },
-    ],
-    Marks: [
-      {
-        id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
-      },
-      {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: "4d ago",
-        commentCount: 1,
-        shareCount: 2,
-      },
-    ],
-  });
+export default function Chat() {
+  const [selected, setSelected] = useState(people[0]);
+  const [query, setQuery] = useState("");
+
+  const filteredPeople =
+    query === ""
+      ? people
+      : people.filter((person) =>
+          person.name
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
 
   return (
     <div>
       <ProfileBar />
       <BottomBar />
       <div>
-        <div className="text-center">Chats</div>
-      </div>
-      <div className="flex justify-center">
-        <div className="w-full max-w-md px-2 py-16 sm:px-0">
-          <Tab.Group>
-            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-              {Object.keys(categories).map((category) => (
-                <Tab
-                  key={category}
-                  className={({ selected }) =>
-                    classNames(
-                      "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
-                      "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
-                      selected
-                        ? "bg-white shadow"
-                        : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
-                    )
-                  }
-                >
-                  {category}
-                </Tab>
-              ))}
-            </Tab.List>
-            <Tab.Panels className="mt-2">
-              {Object.values(categories).map((posts, idx) => (
-                <Tab.Panel
-                  key={idx}
-                  className={classNames(
-                    "rounded-xl bg-white p-3",
-                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
-                  )}
-                >
-                  <ul>
-                    {posts.map((post) => (
-                      <li
-                        key={post.id}
-                        className="relative rounded-md p-3 hover:bg-gray-100"
+        <div className="m-4 text-center text-2xl font-bold">쪽지</div>
+        <div className="flex justify-center">
+          <Combobox value={selected} onChange={setSelected}>
+            <div className="relative mt-1">
+              <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+                <Combobox.Input
+                  className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+                  displayValue={(person) => person.name}
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+                <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                  <SelectorIcon
+                    className="h-5 w-5 text-gray-400"
+                    aria-hidden="true"
+                  />
+                </Combobox.Button>
+              </div>
+              <Transition
+                as={Fragment}
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+                afterLeave={() => setQuery("")}
+              >
+                <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  {filteredPeople.length === 0 && query !== "" ? (
+                    <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+                      Nothing found.
+                    </div>
+                  ) : (
+                    filteredPeople.map((person) => (
+                      <Combobox.Option
+                        key={person.id}
+                        className={({ active }) =>
+                          `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                            active ? "bg-teal-600 text-white" : "text-gray-900"
+                          }`
+                        }
+                        value={person}
                       >
-                        <h3 className="text-sm font-medium leading-5">
-                          {post.title}
-                        </h3>
-
-                        <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
-                          <li>{post.date}</li>
-                          <li>&middot;</li>
-                          <li>{post.commentCount} comments</li>
-                          <li>&middot;</li>
-                          <li>{post.shareCount} shares</li>
-                        </ul>
-
-                        <a
-                          href="#"
-                          className={classNames(
-                            "absolute inset-0 rounded-md",
-                            "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
-                          )}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
+                        {({ selected, active }) => (
+                          <>
+                            <span
+                              className={`block truncate ${
+                                selected ? "font-medium" : "font-normal"
+                              }`}
+                            >
+                              {person.name}
+                            </span>
+                            {selected ? (
+                              <span
+                                className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
+                                  active ? "text-white" : "text-teal-600"
+                                }`}
+                              >
+                                <CheckIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
+                          </>
+                        )}
+                      </Combobox.Option>
+                    ))
+                  )}
+                </Combobox.Options>
+              </Transition>
+            </div>
+          </Combobox>
+        </div>
+        <div>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
+          <Link href={"/chats/user1"}>
+            <div className="m-2 bg-slate-100 rounded-xl p-2 px-4 hover:bg-sky-100">
+              <div className="flex">
+                <div className="text-bold text-lg">김원우</div>
+                <span className="flex h-3 w-3 ml-1">
+                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="text-base">오늘 7교시 자습</div>
+                <div>2022/6/17/13:32</div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

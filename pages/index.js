@@ -23,7 +23,6 @@ export default function Home() {
         >
           <div>로그인</div>
         </div>
-        <ArrowDownIcon className="w-4 h-4" />
       </div>
 
       <div
