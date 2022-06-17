@@ -5,11 +5,10 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 const people = [
-  { id: 1, name: "Durward Reynolds", unavailable: false },
-  { id: 2, name: "Kenton Towne", unavailable: false },
-  { id: 3, name: "Therese Wunsch", unavailable: false },
-  { id: 4, name: "Benedict Kessler", unavailable: true },
-  { id: 5, name: "Katelyn Rohan", unavailable: false },
+  { id: 1, name: "학생 설문", unavailable: false },
+  { id: 2, name: "장소 사용 신청", unavailable: false },
+  { id: 3, name: "외출 외박 관리", unavailable: false },
+  { id: 4, name: "수업 설문", unavailable: true },
 ];
 
 export default function Form() {
@@ -19,8 +18,8 @@ export default function Form() {
       <ProfileBar />
       <BottomBar />
       <div>
-        <div className="flex justify-center">
-          <div className="fixed top-16 w-72">
+        <div>
+          <div className="m-4">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
                 <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
@@ -76,6 +75,17 @@ export default function Form() {
                 </Transition>
               </div>
             </Listbox>
+          </div>
+          <div>
+            {() => {
+              if (selected === "학생 설문") {
+                return (
+                  <div>
+                    <div></div>
+                  </div>
+                );
+              }
+            }}
           </div>
         </div>
       </div>
