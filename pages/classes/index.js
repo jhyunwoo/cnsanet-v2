@@ -7,7 +7,7 @@ export default function Class() {
     <div>
       <ProfileBar />
       <div className="mb-4">
-        <div className="text-center text-3xl font-bold m-4">교과 계시판</div>
+        <div className="text-center text-3xl font-bold m-4">교과 게시판</div>
         <div className="flex justify-evenly mx-4 justify-items-center border-b-2 border-dashed">
           <span className="flex-1 text-center">교과목</span>
           <span className="flex-1 text-center">과제</span>

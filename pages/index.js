@@ -23,10 +23,9 @@ export default function Home() {
         >
           <div>로그인</div>
         </div>
-        <div className="mx-auto animate-bounce absolute bottom-0  w-4 h-4">
-          <ArrowDownIcon />
-        </div>
+        <ArrowDownIcon className="w-4 h-4" />
       </div>
+
       <div
         className={`min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ${login} m-4 rounded-xl backdrop-blur-xl absolute top-0 bottom-0 right-0 left-0 transition duration-150 delay-100`}
       >
@@ -121,6 +120,7 @@ export default function Home() {
           </form>
         </div>
       </div>
+
       <div className="flex flex-col flex-wrap  justify-center bg-blue-400 m-4 p-4 rounded-2xl text-white">
         <div className="text-center text-2xl font-bold">오늘 학사 일정</div>
         <div>
