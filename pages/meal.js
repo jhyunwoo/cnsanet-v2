@@ -308,14 +308,15 @@ export default function Meal() {
   let year = today.getFullYear(); // 년도
   let month = today.getMonth() + 1; // 월
   let date = today.getDate(); // 날짜
-  let day = today.getDay(); // 요일
+  const week = ["일", "월", "화", "수", "목", "금", "토"];
+  let day = week[today.getDay()]; // 요일
 
   return (
     <div>
       <ProfileBar />
       <div className="flex justify-center flex-col">
-        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-6 text-bold text-black border-indigo-700 border-4">
-          {year}년 {month}월 {date}일
+        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black border-sky-400 border-4">
+          {year}년 {month}월 {date}일 {day}요일
         </div>
         <div className="w-full max-w-md px-2 py-0 sm:px-0 mx-auto">
           <Tab.Group>
@@ -382,7 +383,7 @@ export default function Meal() {
 
                         <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
                           <li>❤️{post.commentCount} | </li>
-                          <li>{post.kcal}𝐤𝐜𝐚𝐥</li>
+                          <li>{post.kcal}𝒌𝒄𝒂𝒍</li>
                         </ul>
 
                         <a
