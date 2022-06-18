@@ -309,7 +309,7 @@ export default function Example() {
         <div className="mx-auto text-2xl m-4 font-bold">
           {year}년 {month}월 {date}일 {day}요일
         </div>
-        <table className="border-collapse border border-slate-400 text-center bg-blue-100">
+        <table className="border-collapse border border-slate-400 text-center bg-blue-100 m-2">
           <thead>
             <tr>
               <td className="border border-slate-300 w-24 h-20 font-bold">
