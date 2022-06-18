@@ -29,7 +29,7 @@ export default function Korean() {
                 <div className="my-auto">문법 요소의 활용 - 미니 과제</div>
                 <div className="my-auto ">2022년 7월 12일</div>
               </div>
-              <div className=" bg-green-500 text-white p-2 rounded-lg flex-none">
+              <div className=" bg-green-500 text-white p-2 rounded-lg flex-none my-auto">
                 <CheckIcon className="w-4 h-4" />
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function Korean() {
                 <div className="my-auto">음운 학습지</div>
                 <div className="my-auto ">2022년 6월 12일</div>
               </div>
-              <div className=" bg-red-500 text-white p-2 rounded-lg flex-none">
+              <div className=" bg-red-500 text-white p-2 rounded-lg flex-none my-auto">
                 <XIcon className="w-4 h-4" />
               </div>
             </div>
