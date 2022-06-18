@@ -315,7 +315,7 @@ export default function Meal() {
     <div>
       <ProfileBar />
       <div className="flex justify-center flex-col">
-        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black border-sky-400 border-4">
+        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black ">
           {year}년 {month}월 {date}일 {day}요일
         </div>
         <div className="w-full max-w-md px-2 py-0 sm:px-0 mx-auto">
