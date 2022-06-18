@@ -26,7 +26,7 @@ export default function Home() {
       </div>
 
       <div
-        className={`min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ${login} m-4 rounded-xl backdrop-blur-xl absolute top-0 bottom-0 right-0 left-0 transition duration-150 delay-100`}
+        className={`min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ${login} m-4 rounded-xl backdrop-blur-3xl absolute top-0 bottom-0 right-0 left-0 transition duration-150 delay-100`}
       >
         <div className="max-w-md w-full space-y-8 bg-white/50 rounded-2xl p-4">
           <div>

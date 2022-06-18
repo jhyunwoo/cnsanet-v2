@@ -1,71 +1,83 @@
 import Link from "next/link";
+import {
+  MenuIcon,
+  LibraryIcon,
+  HomeIcon,
+  ClipboardCheckIcon,
+  ChatAlt2Icon,
+  ChevronDoubleRightIcon,
+  XIcon,
+} from "@heroicons/react/outline";
+import { useState } from "react";
+
+const menuOptions = [
+  { op: "교과 계시판", link: "/classes" },
+  { op: "학생 공지사항", link: "/home" },
+  { op: "쪽지", link: "/chats" },
+  { op: "시간표", link: "/schedule" },
+  { op: "급식표", link: "/meal" },
+  { op: "설문", link: "/form" },
+];
 
 export default function BottomBar() {
+  const [menuUp, setMenuUp] = useState(false);
+  function controlMenu() {
+    if (menuUp === true) {
+      setMenuUp(false);
+    } else {
+      setMenuUp(true);
+    }
+  }
+
   return (
-    <div className="flex flex-row justify-between bg-white/50 backdrop-blur-sm m-2 p-2 rounded-xl text-[#2e2a38] fixed bottom-0 right-0 left-0 shadow-xl">
-      <Link href={"/classes"}>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 mx-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-          </svg>
+    <div>
+      <div className="flex flex-row justify-between bg-white/50 backdrop-blur-sm m-2 p-2 rounded-xl text-[#2e2a38] fixed bottom-0 right-0 left-0 shadow-xl">
+        <Link href={"/classes"}>
+          <div>
+            <LibraryIcon className="h-8 w-8" />
+          </div>
+        </Link>
+        <Link href={"/home"}>
+          <div>
+            <HomeIcon className="h-8 w-8" />
+          </div>
+        </Link>
+        <div onClick={controlMenu}>
+          <MenuIcon className="h-8 w-8" />
         </div>
-      </Link>
-      <Link href={"/home"}>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 mx-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-        </div>
-      </Link>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 mx-4"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
+        <Link href={"/form"}>
+          <div>
+            <ClipboardCheckIcon className="h-8 w-8" />
+          </div>
+        </Link>
+        <Link href={"/chats"}>
+          <div>
+            <ChatAlt2Icon className="h-8 w-8" />
+          </div>
+        </Link>
       </div>
-      <Link href={"/form"}>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 mx-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-          </svg>
+      <div
+        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/50 p-4 rounded-2xl flex flex-col backdrop-blur-xl bg-blend-color-burn ${
+          menuUp ? "visible" : "invisible"
+        }`}
+      >
+        <div className="flex justify-between">
+          <div className="text-2xl m-2 mx-auto">전체 메뉴</div>
+          <div onClick={controlMenu} className="p-2 my-auto">
+            <XIcon className="w-4 h-4" />
+          </div>
         </div>
-      </Link>
-      <Link href={"/chats"}>
         <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 mx-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-          </svg>
+          {menuOptions.map((menu, menuIdx) => (
+            <Link key={menuIdx} href={`${menu.link}`}>
+              <div className="m-2 text-lg bg-slate-50/70 rounded-lg p-2 px-4 flex flex-row justify-between backdrop-blur-xl hover:bg-sky-200 transition">
+                <div>{menu.op}</div>
+                <ChevronDoubleRightIcon className="w-4 h-4 my-auto ml-2" />
+              </div>
+            </Link>
+          ))}
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

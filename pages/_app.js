@@ -4,13 +4,13 @@ import BottomCopyright from "../components/BottomCopyright";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div>
       <Head>
         <title>CNSA</title>
       </Head>
       <Component {...pageProps} />
       <BottomCopyright />
-    </>
+    </div>
   );
 }
 
