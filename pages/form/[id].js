@@ -1,5 +1,5 @@
-import BottomBar from "../components/BottomBar";
-import ProfileBar from "../components/ProfileBar";
+import BottomBar from "../../components/BottomBar";
+import ProfileBar from "../../components/ProfileBar";
 
 export default function Forms() {
   return (
