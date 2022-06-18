@@ -144,7 +144,7 @@ export default function Home() {
         <div className="flex flex-wrap">
           <div className="m-4 rounded-xl flex-auto text-white p-4">
             <span className="font-bold text-lg">조식</span>
-            <ol className="mt-2 font-bold bg-gray-900 text-gray-50 rounded-xl p-4">
+            <ol className="mt-2 font-bold dark:bg-gray-900 text-gray-50 rounded-xl p-4">
               <li>잡곡밥(현미)</li>
               <li>버섯찌개</li>
               <li>폭찹</li>
@@ -158,7 +158,7 @@ export default function Home() {
           </div>
           <div className="m-4 rounded-xl flex-auto text-white p-4">
             <span className="font-bold text-lg">중식</span>
-            <ol className="mt-2 font-bold bg-gray-900 text-gray-50 rounded-xl p-4">
+            <ol className="mt-2 font-bold dark:bg-gray-900 text-gray-50 rounded-xl p-4">
               <li>잡곡밥(현미)</li>
               <li>버섯찌개</li>
               <li>폭찹</li>
