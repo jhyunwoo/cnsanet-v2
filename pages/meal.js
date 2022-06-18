@@ -315,22 +315,22 @@ export default function Meal() {
     <div>
       <ProfileBar />
       <div className="flex justify-center flex-col">
-        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black ">
+        <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black dark:text-white">
           {year}년 {month}월 {date}일 {day}요일
         </div>
         <div className="w-full max-w-md px-2 py-0 sm:px-0 mx-auto">
           <Tab.Group>
-            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1 mx-2">
+            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 dark:bg-blue-100/20 p-1 mx-2">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}
                   className={({ selected }) =>
                     classNames(
-                      "w-full rounded-lg py-2.5 text-base font-medium leading-5 text-black",
-                      "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                      "w-full rounded-lg py-2.5 text-base font-medium leading-5 text-black dark:text-white",
+                      "ring-white dark:ring-black ring-opacity-60 ring-offset-2 ring-offset-blue-400 dark:ring-offset-blue-600 focus:outline-none focus:ring-2",
                       selected
-                        ? "bg-white shadow text-blue-600"
-                        : "text-black hover:bg-white/[0.12] hover:text-gray-700"
+                        ? "bg-white dark:bg-black shadow text-blue-600 dark:text-blue-300"
+                        : "text-black dark:text-white hover:bg-white/[0.12] dark:hover:bg-black/[0.12] hover:text-gray-700 dark:hover:text-gray-300"
                     )
                   }
                 >
@@ -343,45 +343,47 @@ export default function Meal() {
                 <Tab.Panel
                   key={idx}
                   className={classNames(
-                    "rounded-xl bg-white p-3",
-                    "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                    "rounded-xl bg-white dark:bg-black p-3",
+                    "ring-white dark:ring-black ring-opacity-60 ring-offset-2 ring-offset-blue-400 dark:ring-offset-blue-600 focus:outline-none focus:ring-2"
                   )}
                 >
                   <ul>
                     {posts.map((post) => (
                       <li
                         key={post.id}
-                        className="relative rounded-md p-3 hover:bg-gray-200"
+                        className="relative rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-800"
                       >
-                        <h3 className="font-bold mb-1">{post.meal}</h3>
+                        <h3 className="font-bold mb-1 dark:text-white">
+                          {post.meal}
+                        </h3>
                         <div className="flex flex-wrap flex-col">
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal1}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal2}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal3}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal4}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal5}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal6}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal7}
                           </h3>
-                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 text-white font my-1 p-1 rounded-lg">
+                          <h3 className="text-sm font-semibold leading-5 bg-sky-600 dark:bg-sky-800 text-white font my-1 p-1 rounded-lg">
                             {post.meal8}
                           </h3>
                         </div>
 
-                        <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
+                        <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500 dark:text-gray-200">
                           <li>❤️{post.commentCount} | </li>
                           <li>{post.kcal}𝒌𝒄𝒂𝒍</li>
                         </ul>
@@ -390,7 +392,7 @@ export default function Meal() {
                           href="#"
                           className={classNames(
                             "absolute inset-0 rounded-md",
-                            "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
+                            "ring-blue-400 dark:ring-blue-700 focus:z-10 focus:outline-none focus:ring-2"
                           )}
                         />
                       </li>

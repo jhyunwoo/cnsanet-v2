@@ -79,22 +79,26 @@ export default function ApplicationPlace() {
       <ProfileBar />
       <BottomBar />
       <div className="flex justify-center flex-col">
-        <div className=" text-2xl font-bold flex-1 mx-auto">장소 사용 신청</div>
-        <div className="flex-1 m-4 bg-slate-100 p-2 rounded-xl">
-          <div className="text-xl font-bold">용도 및 일자 선택</div>
+        <div className=" text-2xl font-bold flex-1 mx-auto dark:text-white">
+          장소 사용 신청
+        </div>
+        <div className="flex-1 m-4 bg-slate-100 dark:bg-slate-800 p-4 rounded-xl">
+          <div className="text-xl font-bold dark:text-slate-100">
+            용도 및 일자 선택
+          </div>
           <div className="px-2 py-4 sm:px-0">
             <Tab.Group>
-              <Tab.List className="flex space-x-1 rounded-xl bg-white p-1">
+              <Tab.List className="flex space-x-1 rounded-xl bg-white dark:bg-black p-1">
                 {purpose.map((prupose, purposeIdx) => (
                   <Tab
                     key={purposeIdx}
                     className={({ selected }) =>
                       classNames(
                         "w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition",
-                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-indigo-400 focus:outline-none focus:ring-2",
+                        "ring-white dark:ring-slate-900 ring-opacity-60 ring-offset-2 ring-offset-indigo-400 dark:ring-offset-indigo-700 focus:outline-none focus:ring-2",
                         selected
-                          ? "bg-indigo-500 text-white shadow"
-                          : " hover:bg-indigo-300 hover:text-white text-indigo-700"
+                          ? "bg-indigo-500 dark:bg-indigo-800  text-white shadow"
+                          : " hover:bg-indigo-300 dark:hover:bg-indigo-800 hover:text-white  text-indigo-700 dark:text-indigo-300"
                       )
                     }
                   >
@@ -104,23 +108,23 @@ export default function ApplicationPlace() {
               </Tab.List>
             </Tab.Group>
           </div>
-          <div className="px-2 py-4 sm:px-0 -mt-6">
+          <div className="px-2 py-4 sm:px-0">
             <Tab.Group>
-              <Tab.List className="flex space-x-1 rounded-xl bg-white p-1">
-                {appDate.map((appDate, idx) => (
+              <Tab.List className="flex space-x-1 rounded-xl bg-white dark:bg-black p-1">
+                {appDate.map((date, dateIdx) => (
                   <Tab
-                    key={idx}
+                    key={dateIdx}
                     className={({ selected }) =>
                       classNames(
                         "w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition",
-                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-indigo-400 focus:outline-none focus:ring-2",
+                        "ring-white dark:ring-slate-900 ring-opacity-60 ring-offset-2 ring-offset-indigo-400 dark:ring-offset-indigo-700 focus:outline-none focus:ring-2",
                         selected
-                          ? "bg-indigo-500 text-white shadow"
-                          : " hover:bg-indigo-300 hover:text-white text-indigo-700"
+                          ? "bg-indigo-500 dark:bg-indigo-800  text-white shadow"
+                          : " hover:bg-indigo-300 dark:hover:bg-indigo-800 hover:text-white  text-indigo-700 dark:text-indigo-300"
                       )
                     }
                   >
-                    {appDate.date}
+                    {date.date}
                   </Tab>
                 ))}
               </Tab.List>
@@ -128,17 +132,17 @@ export default function ApplicationPlace() {
           </div>
           <div className="px-2 py-4 sm:px-0">
             <Tab.Group>
-              <Tab.List className="flex space-x-1 rounded-xl bg-white p-1">
+              <Tab.List className="flex space-x-1 rounded-xl bg-white dark:bg-black p-1">
                 {appTime.map((appTime, appTimeIdx) => (
                   <Tab
                     key={appTimeIdx}
                     className={({ selected }) =>
                       classNames(
                         "w-full rounded-lg py-2.5 text-sm font-medium leading-5 transition",
-                        "ring-white ring-opacity-60 ring-offset-2 ring-offset-indigo-400 focus:outline-none focus:ring-2",
+                        "ring-white dark:ring-slate-900 ring-opacity-60 ring-offset-2 ring-offset-indigo-400 dark:ring-offset-indigo-700 focus:outline-none focus:ring-2",
                         selected
-                          ? "bg-indigo-500 text-white shadow"
-                          : " hover:bg-indigo-300 hover:text-white text-indigo-700"
+                          ? "bg-indigo-500 dark:bg-indigo-800  text-white shadow"
+                          : " hover:bg-indigo-300 dark:hover:bg-indigo-800 hover:text-white  text-indigo-700 dark:text-indigo-300"
                       )
                     }
                   >
@@ -149,7 +153,9 @@ export default function ApplicationPlace() {
             </Tab.Group>
           </div>
         </div>
-        <div className="text-center text-4xl my-96">🚧개발 예정🚧</div>
+        <div className="text-center text-4xl my-96 dark:text-white">
+          🚧개발 예정🚧
+        </div>
       </div>
     </div>
   );

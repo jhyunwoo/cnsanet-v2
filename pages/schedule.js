@@ -306,43 +306,48 @@ export default function Example() {
       <ProfileBar />
       <BottomBar />
       <div className="flex justify-center flex-col">
-        <div className="mx-auto text-2xl m-4 font-bold">
+        <div className="mx-auto text-2xl m-4 font-bold dark:text-white">
           {year}년 {month}월 {date}일 {day}요일
         </div>
-        <table className="border-collapse border border-slate-400 text-center bg-blue-100 m-2">
+        <table className="border-collapse border border-slate-400 text-center bg-blue-100 dark:bg-blue-900 dark:text-white m-2">
           <thead>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 시간
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 월
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 화
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 수
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 목
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 금
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 토
               </td>
-              <td className="border border-slate-300 w-24 h-20 font-bold">
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 font-bold">
                 일
               </td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">1교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                1교시
+              </td>
               {p1.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -351,9 +356,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">2교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                2교시
+              </td>
               {p2.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -362,9 +372,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">3교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                3교시
+              </td>
               {p3.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -373,9 +388,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">4교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                4교시
+              </td>
               {p4.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -384,9 +404,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">5교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                5교시
+              </td>
               {p5.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -395,9 +420,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">6교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                6교시
+              </td>
               {p6.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -406,9 +436,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">7교시</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                7교시
+              </td>
               {p7.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -417,9 +452,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">ET</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                ET
+              </td>
               {et.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -428,9 +468,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">EP1</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                EP1
+              </td>
               {ep1.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -439,9 +484,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">EP2</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                EP2
+              </td>
               {ep2.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>
@@ -450,9 +500,14 @@ export default function Example() {
               ))}
             </tr>
             <tr>
-              <td className="border border-slate-300 w-24 h-20 ">연장 면학</td>
+              <td className="border border-slate-300 w-24 h-20 dark:border-slate-800 ">
+                연장 면학
+              </td>
               {extraStudy.map((cla, claIdx) => (
-                <td className="border border-slate-300 w-24 h-20 " key={claIdx}>
+                <td
+                  className="border border-slate-300 w-24 h-20 dark:border-slate-800 "
+                  key={claIdx}
+                >
                   <div>{cla.class}</div>
                   <div>{cla.room}</div>
                   <div>{cla.teacher}</div>

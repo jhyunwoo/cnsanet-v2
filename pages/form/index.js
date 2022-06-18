@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 
-const people = [
+const selForm = [
   { id: 1, name: "학생 설문", unavailable: false },
   { id: 2, name: "장소 사용 신청", unavailable: false },
   { id: 3, name: "외출 외박 관리", unavailable: false },
@@ -48,7 +48,7 @@ const studentForm = [
 ];
 
 export default function Form() {
-  const [selected, setSelected] = useState(people[0]);
+  const [selected, setSelected] = useState(selForm[0]);
   return (
     <div>
       <ProfileBar />
@@ -58,8 +58,10 @@ export default function Form() {
           <div className="m-4">
             <Listbox value={selected} onChange={setSelected}>
               <div className=" mt-1">
-                <Listbox.Button className=" w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-                  <span className="block truncate">{selected.name}</span>
+                <Listbox.Button className=" w-full cursor-default rounded-lg bg-white dark:bg-slate-700 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 dark:focus-visible:border-indigo-700 focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-black focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-300 dark:focus-visible:ring-offset-blue-700 sm:text-sm">
+                  <span className="block truncate dark:text-white">
+                    {selected.name}
+                  </span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"></span>
                 </Listbox.Button>
                 <Transition
@@ -68,27 +70,27 @@ export default function Form() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                    {people.map((person, personIdx) => (
+                  <Listbox.Options className="absolute mt-1 max-h-60 w-11/12 overflow-auto rounded-md bg-white dark:bg-black py-1 text-base shadow-lg ring-1 ring-black dark:ring-white ring-opacity-5 focus:outline-none sm:text-sm">
+                    {selForm.map((sel, selIdx) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={selIdx}
                         className={({ active }) =>
                           ` cursor-default select-none py-2 pl-10 pr-4 ${
                             active
-                              ? "bg-amber-100 text-amber-900"
-                              : "text-gray-900"
+                              ? "bg-sky-100 dark:bg-sky-900 text-sky-900 dark:text-sky-100"
+                              : "text-gray-900 dark:text-slate-100"
                           }`
                         }
-                        value={person}
+                        value={sel}
                       >
                         {({ selected }) => (
                           <>
                             <span
-                              className={`block truncate ${
+                              className={`block truncate dark:text-white ${
                                 selected ? "font-medium" : "font-normal"
                               }`}
                             >
-                              {person.name}
+                              {sel.name}
                             </span>
                           </>
                         )}
@@ -106,8 +108,10 @@ export default function Form() {
                   <Link href={`/form/${student.name}`} key={studentIdx}>
                     <div
                       className={`${
-                        student.did ? "bg-blue-500" : "bg-red-500"
-                      } m-4 p-3 flex-1 text-white rounded-xl`}
+                        student.did
+                          ? "bg-green-400 dark:bg-green-800 hover:bg-green-500 dark:hover:bg-green70 transition"
+                          : "bg-orange-400 dark:bg-orange-800 hover:bg-orange-500 dark:hover:bg-orange-700 transition"
+                      } m-4 p-3 flex-1 text-white rounded-xl `}
                     >
                       <div className="text-xl">{student.name}</div>
                       <div>기간: {student.time}</div>
@@ -121,21 +125,25 @@ export default function Form() {
             )}
             {selected.name === "장소 사용 신청" ? (
               <Link href={"/form/applicationPlace"}>
-                <div className="bg-sky-500 m-2 p-3 rounded-xl text-white flex flex-row justify-center hover:bg-sky-400 transition">
+                <div className="bg-sky-500 dark:bg-sky-300 m-2 p-3 rounded-xl text-white dark:text-black font-bold flex flex-row justify-center hover:bg-sky-400 dark:hover:bg-sky-200 transition">
                   <div>장소 사용 신청하기</div>
-                  <ChevronRightIcon className="w-4 h-4 text-white my-auto" />
+                  <ChevronRightIcon className="w-4 h-4 text-white dark:text-black my-auto" />
                 </div>
               </Link>
             ) : (
               <div></div>
             )}
             {selected.name === "외출 외박 관리" ? (
-              <div className="text-center text-4xl my-96">🚧개발 예정🚧</div>
+              <div className="text-center text-4xl my-96 dark:text-white">
+                🚧개발 예정🚧
+              </div>
             ) : (
               <div></div>
             )}
             {selected.name === "수업 설문" ? (
-              <div className="text-center text-4xl my-96">🚧개발 예정🚧</div>
+              <div className="text-center text-4xl my-96 dark:text-white">
+                🚧개발 예정🚧
+              </div>
             ) : (
               <div></div>
             )}

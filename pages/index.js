@@ -11,17 +11,17 @@ export default function Home() {
   const [login, setLogin] = useState("invisible");
   const [main, setMain] = useState("visible");
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 dark:bg-slate-900">
       <div className={`w-screen h-screen flex justify-center flex-col`}>
-        <div className="text-3xl mx-auto font-bold text-indigo-800 mb-2">
+        <div className="text-3xl mx-auto font-bold text-indigo-800 dark:text-indigo-200 mb-2">
           CNSA
         </div>
-        <div className="text-4xl mx-auto font-extrabold text-indigo-800">
+        <div className="text-4xl mx-auto font-extrabold text-indigo-800 dark:text-indigo-200">
           충남삼성고등학교
         </div>
 
         <div
-          className="bg-indigo-600 text-white text-center mx-auto p-2 px-6 rounded-xl mt-16 text-2xl ease-in-out duration-300 delay-150 font-bold shadow-md hover:bg-indigo-500 transition hover:-translate-y-1"
+          className="bg-indigo-600 dark:bg-indigo-500 text-white dark:text-indigo-100 text-center mx-auto p-2 px-6 rounded-xl mt-16 text-2xl ease-in-out duration-300 delay-150 font-bold shadow-md hover:bg-indigo-500 dark:hover:bg-indigo-400 transition hover:-translate-y-1"
           onClick={() => {
             setLogin("visible");
             setMain("invisible");
@@ -34,11 +34,11 @@ export default function Home() {
       <div
         className={`min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ${login} m-4 rounded-xl backdrop-blur-3xl absolute top-0 bottom-0 right-0 left-0 transition duration-150 delay-100`}
       >
-        <div className="max-w-md w-full space-y-8 bg-white/50 rounded-2xl p-4">
+        <div className="max-w-md w-full space-y-8 bg-white/50 dark:bg-black/50 rounded-2xl p-4">
           <div>
             <div className="flex justify-end">
               <XIcon
-                className="h-5 w-5 text-indigo-500"
+                className="h-5 w-5 text-indigo-500 dark:text-indigo-100"
                 onClick={() => {
                   setLogin("invisible");
                   setMain("visible");
@@ -46,7 +46,7 @@ export default function Home() {
               />
             </div>
 
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-gray-100">
               로그인
             </h2>
           </div>
@@ -88,11 +88,11 @@ export default function Home() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-indigo-600 dark:text-indigo-400 focus:ring-indigo-500 dark:ring-indigo-600 border-gray-300 dark:border-gray-700 rounded"
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
+                  className="ml-2 block text-sm text-gray-900 dark:text-gray-50"
                 >
                   계정 로그인 유지
                 </label>
@@ -101,7 +101,7 @@ export default function Home() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  className="font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dakr:hover:text-indigo-300"
                 >
                   비밀번호 분실
                 </a>
@@ -111,11 +111,11 @@ export default function Home() {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white dark:text-black bg-indigo-600 dark:bg-indigo-200 hover:bg-indigo-700 dark:hover:bg-indigo-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-indigo-500"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon
-                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                    className="h-5 w-5 text-indigo-500 dark:text-indigo-700 group-hover:text-indigo-400 dark:group-hover:text-indigo-800"
                     aria-hidden="true"
                   />
                 </span>
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col flex-wrap  justify-center bg-blue-400 m-4 p-4 rounded-2xl text-white">
+      <div className="flex flex-col flex-wrap  justify-center bg-blue-400 dark:bg-sky-800 m-4 p-4 rounded-2xl text-white">
         <div className="text-center text-2xl font-bold">오늘 학사 일정</div>
         <div>
           <div className="text-center text-lg mt-2">2022년 6월 16일</div>
@@ -138,13 +138,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center bg-violet-400 m-4 rounded-2xl text-white">
+      <div className="flex flex-col justify-center bg-violet-400 dark:bg-violet-800 m-4 rounded-2xl text-white ">
         <div className="text-center text-2xl font-bold mt-4">오늘 급식</div>
         <div className="text-center text-lg mt-2">2022년 6월 16일</div>
         <div className="flex flex-wrap">
-          <div className="m-4 rounded-xl flex-auto text0white p-4">
+          <div className="m-4 rounded-xl flex-auto text-white p-4">
             <span className="font-bold text-lg">조식</span>
-            <ol className="mt-2 font-bold bg-white text-black rounded-xl p-4">
+            <ol className="mt-2 font-bold bg-gray-900 text-gray-50 rounded-xl p-4">
               <li>잡곡밥(현미)</li>
               <li>버섯찌개</li>
               <li>폭찹</li>
@@ -158,7 +158,7 @@ export default function Home() {
           </div>
           <div className="m-4 rounded-xl flex-auto text-white p-4">
             <span className="font-bold text-lg">중식</span>
-            <ol className="mt-2 font-bold bg-white text-black rounded-xl p-4">
+            <ol className="mt-2 font-bold bg-gray-900 text-gray-50 rounded-xl p-4">
               <li>잡곡밥(현미)</li>
               <li>버섯찌개</li>
               <li>폭찹</li>
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
           <div className="m-4 rounded-xl flex-auto text0white p-4">
             <span className="font-bold text-lg">석식</span>
-            <ol className="mt-2 font-bold bg-white text-black rounded-xl p-4">
+            <ol className="mt-2 font-bold bg-gray-900 text-gray-50 rounded-xl p-4">
               <li>잡곡밥(현미)</li>
               <li>버섯찌개</li>
               <li>폭찹</li>
