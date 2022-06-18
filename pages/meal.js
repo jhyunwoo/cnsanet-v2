@@ -320,7 +320,7 @@ export default function Meal() {
         </div>
         <div className="w-full max-w-md px-2 py-0 sm:px-0 mx-auto">
           <Tab.Group>
-            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+            <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1 mx-2">
               {Object.keys(categories).map((category) => (
                 <Tab
                   key={category}
