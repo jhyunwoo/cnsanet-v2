@@ -329,7 +329,7 @@ export default function Meal() {
     return <div>Access Denied</div>;
   }
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <div className="flex justify-center flex-col">
         <div className="text-center text-3xl my-4 mx-auto rounded-2xl p-2 px-4 text-bold text-black dark:text-white">

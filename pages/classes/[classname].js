@@ -26,7 +26,7 @@ export default function Class() {
     return <div>Access Denied</div>;
   }
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <BottomBar />
       <div className="flex flex-col justify-center">

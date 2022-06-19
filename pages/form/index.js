@@ -50,7 +50,7 @@ const studentForm = [
 export default function Form() {
   const [selected, setSelected] = useState(selForm[0]);
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <BottomBar />
       <div>

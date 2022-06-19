@@ -22,7 +22,7 @@ export default function Chat() {
     return <div>Access Denied</div>;
   }
   return (
-    <div className="h-screen">
+    <div>
       <BottomBar />
       <ProfileBar />
       <div className="text-center text-4xl my-96 dark:text-slate-100">

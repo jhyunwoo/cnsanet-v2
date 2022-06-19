@@ -23,7 +23,7 @@ export default function Class() {
     return <div>Access Denied</div>;
   }
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <div className="mb-4">
         <div className="text-center text-3xl font-bold m-4 dark:text-white">

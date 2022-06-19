@@ -96,7 +96,7 @@ export default function Chat() {
     return <div>Access Denied</div>;
   }
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <BottomBar />
       <div>

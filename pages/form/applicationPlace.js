@@ -75,7 +75,7 @@ export default function ApplicationPlace() {
   ];
 
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <BottomBar />
       <div className="flex justify-center flex-col">

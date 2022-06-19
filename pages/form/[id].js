@@ -3,7 +3,7 @@ import ProfileBar from "../../components/ProfileBar";
 
 export default function Forms() {
   return (
-    <div className="h-screen">
+    <div className="">
       <ProfileBar />
       <BottomBar />
       <div className="text-center text-4xl my-96 dark:text-white">
