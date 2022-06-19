@@ -1,5 +1,6 @@
 import { LockClosedIcon, XIcon, ArrowDownIcon } from "@heroicons/react/solid";
 import { useState } from "react";
+import Login from "../components/login";
 
 export default function Home() {
   let today = new Date();
@@ -18,7 +19,7 @@ export default function Home() {
           충남삼성고등학교
         </div>
 
-        <div
+        {/* <div
           className="bg-indigo-600 dark:bg-indigo-500 text-white dark:text-indigo-100 text-center mx-auto p-2 px-6 rounded-xl mt-16 text-2xl ease-in-out duration-300 delay-150 font-bold shadow-md hover:bg-indigo-500 dark:hover:bg-indigo-400 transition hover:-translate-y-1"
           onClick={() => {
             setLogin("visible");
@@ -26,10 +27,11 @@ export default function Home() {
           }}
         >
           <div>로그인</div>
-        </div>
+        </div> */}
+        <Login />
       </div>
 
-      <div
+      {/* <div
         className={`min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ${login} m-4 rounded-xl backdrop-blur-3xl absolute top-0 bottom-0 right-0 left-0 transition duration-150 delay-100`}
       >
         <div className="max-w-md w-full space-y-8 bg-white/50 dark:bg-black/50 rounded-2xl p-4">
@@ -122,7 +124,7 @@ export default function Home() {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col flex-wrap  justify-center bg-blue-400 dark:bg-sky-800 m-4 p-4 rounded-2xl text-white">
         <div className="text-center text-2xl font-bold">오늘 학사 일정</div>

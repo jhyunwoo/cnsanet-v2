@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Login from "../components/login";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function ProfileBar() {
   return (
@@ -7,8 +9,8 @@ export default function ProfileBar() {
         <div className="flex flex-row">
           <div className="w-10 h-10 bg-slate-400 dark:bg-slate-800 m-4 rounded-full flex-none "></div>
           <div className="m-2 my-4 flex justify-between flex-1">
-            <div className="flex-1 text-lg font-bold my-auto dark:text-white">
-              210421 전현우
+            <div className="flex-1 text-lg font-bold my-auto dark:text-white ">
+              <Login useBtn="invisible" />
             </div>
             <div className="mx-4 text-sm dark:text-white">
               <div>칭찬쪽지: 4개</div>
