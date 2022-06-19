@@ -3,7 +3,7 @@ import ProfileBar from "../../components/ProfileBar";
 import Link from "next/link";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
-import Reject from "../components/reject";
+import Reject from "../../components/reject";
 
 export default function Class() {
   const { data: session, status } = useSession();

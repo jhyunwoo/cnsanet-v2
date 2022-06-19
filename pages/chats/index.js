@@ -4,7 +4,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
-import Reject from "../components/reject";
+import Reject from "../../components/reject";
 
 export default function Chat() {
   const messages = [

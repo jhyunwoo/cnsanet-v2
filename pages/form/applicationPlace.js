@@ -1,6 +1,8 @@
 import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
 import { Tab } from "@headlessui/react";
+import Reject from "../../components/reject";
+import { useSession, getSession } from "next-auth/react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -73,6 +75,23 @@ export default function ApplicationPlace() {
     { time: "EP1" },
     { time: "EP2" },
   ];
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+  const [content, setContent] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("/api/examples/protected");
+      const json = await res.json();
+      if (json.content) {
+        setContent(json.content);
+      }
+    };
+    fetchData();
+  }, [session]);
+  if (typeof window !== "undefined" && loading) return null;
+  if (!session) {
+    return <Reject />;
+  }
 
   return (
     <div className="">

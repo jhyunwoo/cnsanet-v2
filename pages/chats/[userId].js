@@ -2,7 +2,7 @@ import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
-import Reject from "../components/reject";
+import Reject from "../../components/reject";
 
 export default function Chat() {
   const { data: session, status } = useSession();

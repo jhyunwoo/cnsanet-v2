@@ -8,6 +8,9 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/solid";
 import Link from "next/link";
+import { useSession, getSession } from "next-auth/react";
+
+import Reject from "../../components/reject";
 
 const selForm = [
   { id: 1, name: "학생 설문", unavailable: false },
@@ -49,6 +52,23 @@ const studentForm = [
 
 export default function Form() {
   const [selected, setSelected] = useState(selForm[0]);
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+  const [content, setContent] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("/api/examples/protected");
+      const json = await res.json();
+      if (json.content) {
+        setContent(json.content);
+      }
+    };
+    fetchData();
+  }, [session]);
+  if (typeof window !== "undefined" && loading) return null;
+  if (!session) {
+    return <Reject />;
+  }
   return (
     <div className="">
       <ProfileBar />
