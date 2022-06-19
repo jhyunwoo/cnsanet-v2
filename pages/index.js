@@ -10,7 +10,7 @@ export default function Home() {
   const [login, setLogin] = useState("invisible");
   const [main, setMain] = useState("visible");
   return (
-    <div className="bg-slate-100 dark:bg-slate-900">
+    <div className="bg-slate-100 dark:bg-slate-900 h-screen">
       <div className={`w-screen h-screen flex justify-center flex-col`}>
         <div className="text-3xl mx-auto font-bold text-indigo-800 dark:text-indigo-200 mb-2">
           CNSA
