@@ -3,6 +3,7 @@ import ProfileBar from "../../components/ProfileBar";
 import { Tab } from "@headlessui/react";
 import Reject from "../../components/reject";
 import { useSession, getSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

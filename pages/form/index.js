@@ -1,6 +1,6 @@
 import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import {
   CheckIcon,
@@ -9,7 +9,6 @@ import {
 } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useSession, getSession } from "next-auth/react";
-
 import Reject from "../../components/reject";
 
 const selForm = [
