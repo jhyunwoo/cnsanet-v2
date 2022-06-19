@@ -2,6 +2,7 @@ import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
+import Reject from "../components/reject";
 
 export default function Chat() {
   const { data: session, status } = useSession();
@@ -19,7 +20,7 @@ export default function Chat() {
   }, [session]);
   if (typeof window !== "undefined" && loading) return null;
   if (!session) {
-    return <div>Access Denied</div>;
+    return <Reject />;
   }
   return (
     <div>

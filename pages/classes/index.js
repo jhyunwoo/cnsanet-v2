@@ -3,6 +3,7 @@ import ProfileBar from "../../components/ProfileBar";
 import Link from "next/link";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
+import Reject from "../components/reject";
 
 export default function Class() {
   const { data: session, status } = useSession();
@@ -20,7 +21,7 @@ export default function Class() {
   }, [session]);
   if (typeof window !== "undefined" && loading) return null;
   if (!session) {
-    return <div>Access Denied</div>;
+    return <Reject />;
   }
   return (
     <div className="">

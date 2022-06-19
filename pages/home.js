@@ -3,6 +3,7 @@ import BottomBar from "../components/BottomBar";
 import ProfileBar from "../components/ProfileBar";
 import { useSession, getSession } from "next-auth/react";
 import { useState, useEffect } from "react";
+import Reject from "../components/reject";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -20,7 +21,7 @@ export default function Home() {
   }, [session]);
   if (typeof window !== "undefined" && loading) return null;
   if (!session) {
-    return <div>Access Denied</div>;
+    return <Reject />;
   }
   return (
     <div className="bg-slate-100 dark:bg-slate-900">
@@ -35,7 +36,7 @@ export default function Home() {
               오늘 마감
             </div>
             <div className="flex flex-wrap mt-4">
-              <Link href={"/classes/english"}>
+              <Link href={"/classes/영어I"}>
                 <div className="bg-indigo-400 dark:bg-indigo-800 p-4 rounded-md text-white my-2 mx-4 flex-auto">
                   <div className="text-lg text-bold">영어</div>
                   <div className="mt-2">부교재 87쪽 까지 풀기</div>
@@ -45,7 +46,7 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
-              <Link href={"/classes/english"}>
+              <Link href={"/classes/영어I"}>
                 <div className="bg-indigo-400 dark:bg-indigo-800 p-4 rounded-md text-white my-2 mx-4 flex-auto">
                   <div className="text-lg text-bold">영어</div>
                   <div className="mt-2">부교재 87쪽 까지 풀기</div>
@@ -60,7 +61,7 @@ export default function Home() {
               내일 마감
             </div>
             <div className="flex flex-wrap mt-4">
-              <Link href={"/classes/maths1"}>
+              <Link href={"/classes/수학I"}>
                 <div className="bg-indigo-400 dark:bg-indigo-800 p-4 rounded-md text-white my-2 mx-4 flex-auto">
                   <div className="text-lg text-bold">수학 I</div>
                   <div className="mt-2">부교재 187쪽 까지 풀기</div>
