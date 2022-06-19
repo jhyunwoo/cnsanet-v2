@@ -2,15 +2,18 @@ import BottomBar from "../../components/BottomBar";
 import ProfileBar from "../../components/ProfileBar";
 import { CheckIcon, XIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function Korean() {
+export default function Class() {
+  const router = useRouter();
+
   return (
-    <div>
+    <div className="h-screen">
       <ProfileBar />
       <BottomBar />
       <div className="flex flex-col justify-center">
         <div className="text-center text-2xl font-bold m-4 dark:text-white">
-          언어와 매체
+          {router.query.classname}
         </div>
         <div className="bg-sky-100 dark:bg-blue-900 p-4 flex flex-col">
           <div className="text-xl m-2 dark:text-white">교과 활동</div>

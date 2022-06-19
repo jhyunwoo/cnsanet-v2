@@ -77,7 +77,7 @@ export default function Chat() {
     },
   ];
   return (
-    <div>
+    <div className="h-screen">
       <ProfileBar />
       <BottomBar />
       <div>

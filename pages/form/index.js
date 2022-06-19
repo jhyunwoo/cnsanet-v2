@@ -50,12 +50,12 @@ const studentForm = [
 export default function Form() {
   const [selected, setSelected] = useState(selForm[0]);
   return (
-    <div>
+    <div className="h-screen">
       <ProfileBar />
       <BottomBar />
       <div>
         <div>
-          <div className="m-4">
+          <div className="m-4 ">
             <Listbox value={selected} onChange={setSelected}>
               <div className=" mt-1">
                 <Listbox.Button className=" w-full cursor-default rounded-lg bg-white dark:bg-slate-700 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 dark:focus-visible:border-indigo-700 focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-black focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-300 dark:focus-visible:ring-offset-blue-700 sm:text-sm">

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Class() {
   return (
-    <div>
+    <div className="h-screen">
       <ProfileBar />
       <div className="mb-4">
         <div className="text-center text-3xl font-bold m-4 dark:text-white">
@@ -18,7 +18,7 @@ export default function Class() {
           </span>
         </div>
         <div className="space-y-2">
-          <Link href={"/classes/korean"}>
+          <Link href={"/classes/언어와매체"}>
             <div className="flex justify-evenly mx-4 justify-items-center mt-2 py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 언어와 매체
@@ -31,7 +31,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/english"}>
+          <Link href={"/classes/영어I"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 영어 I
@@ -44,7 +44,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/chemistry"}>
+          <Link href={"/classes/화학I"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 화학 I
@@ -57,7 +57,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/maths1"}>
+          <Link href={"/classes/수학I"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 수학 I
@@ -70,7 +70,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/maths2"}>
+          <Link href={"/classes/수학II"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 수학 II
@@ -83,7 +83,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/computerscience"}>
+          <Link href={"/classes/정보과학"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 정보과학
@@ -96,7 +96,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/art-1"}>
+          <Link href={"/classes/미술A"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 미술 A
@@ -109,7 +109,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/art-2"}>
+          <Link href={"/classes/미술B"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 미술 B
@@ -122,7 +122,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/PE-1"}>
+          <Link href={"/classes/운동과건강A"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 체육 A
@@ -135,7 +135,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/PE-2"}>
+          <Link href={"/classes/운동과건강B"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 체육 B
@@ -148,7 +148,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/korean-history"}>
+          <Link href={"/classes/한국사"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 한국사
@@ -161,7 +161,7 @@ export default function Class() {
               </span>
             </div>
           </Link>
-          <Link href={"/classes/homeroom"}>
+          <Link href={"/classes/2학년5반"}>
             <div className="flex justify-evenly mx-4 justify-items-center py-2 hover:bg-sky-100 dark:hover:bg-blue-800 transition ease-in-out duration-300 rounded-xl">
               <span className="flex-1 text-center dark:text-slate-100">
                 2학년 5반

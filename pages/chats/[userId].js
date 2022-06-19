@@ -3,7 +3,7 @@ import ProfileBar from "../../components/ProfileBar";
 
 export default function Chat() {
   return (
-    <div>
+    <div className="h-screen">
       <BottomBar />
       <ProfileBar />
       <div className="text-center text-4xl my-96 dark:text-slate-100">
