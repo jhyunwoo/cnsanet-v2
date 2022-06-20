@@ -133,7 +133,7 @@ export default function Home() {
         <div className="text-center text-2xl font-bold">오늘 학사 일정</div>
         <div>
           <div className="text-center text-lg mt-2">
-            {year}년 {month}월 {day}일
+            {year}년 {month}월 {date}일 {day}요일
           </div>
           <div>
             <ol className="m-4">
@@ -146,7 +146,7 @@ export default function Home() {
       <div className="flex flex-col justify-center bg-violet-400 dark:bg-violet-800 m-4 rounded-2xl text-white ">
         <div className="text-center text-2xl font-bold mt-4">오늘 급식</div>
         <div className="text-center text-lg mt-2">
-          {year}년 {month}월 {day}일
+          {year}년 {month}월 {date}일 {day}요일
         </div>
         <div className="flex flex-wrap">
           <div className="m-4 rounded-xl flex-auto text-white p-4">
