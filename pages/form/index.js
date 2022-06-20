@@ -128,8 +128,8 @@ export default function Form() {
                     <div
                       className={`${
                         student.did
-                          ? "bg-green-400 dark:bg-green-800 hover:bg-green-500 dark:hover:bg-green70 transition"
-                          : "bg-orange-400 dark:bg-orange-800 hover:bg-orange-500 dark:hover:bg-orange-700 transition"
+                          ? "bg-blue-400 dark:bg-blue-800 hover:bg-blue-500 dark:hover:bg-blue-700 transition"
+                          : "bg-red-400 dark:bg-red-800 hover:bg-red-500 dark:hover:bg-red-700 transition"
                       } m-4 p-3 flex-1 text-white rounded-xl `}
                     >
                       <div className="text-xl">{student.name}</div>
