@@ -13,8 +13,10 @@ export default function Component(useBtn) {
   }
   return (
     <>
-      <Link>
-        <div>로그인이 필요합니다.</div>
+      <Link href={"/"}>
+        <div className="m-2 p-2 rounded-xl bg-indigo-500">
+          로그인이 필요합니다.
+        </div>
       </Link>
     </>
   );
