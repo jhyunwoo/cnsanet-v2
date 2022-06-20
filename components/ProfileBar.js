@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Login from "../components/login";
 import { useSession, signIn, signOut } from "next-auth/react";
+import LoginState from "../components/loginState";
 
 export default function ProfileBar() {
   return (
@@ -11,7 +12,7 @@ export default function ProfileBar() {
           <div className="m-2 my-4 flex justify-between flex-1">
             <div className="flex-1 text-lg font-bold my-auto dark:text-white ">
               <div>
-                <Login useBtn="invisible" />
+                <LoginState />
                 {/* <Link>
                   <div
                     className="text-sm m-2 p-2 rounded-xl bg-indigo-500 text-white"

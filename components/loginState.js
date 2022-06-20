@@ -1,5 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-export default function Component() {
+import Link from "next/link";
+export default function Component(useBtn) {
   const { data: session } = useSession();
   if (session) {
     return (
@@ -7,13 +8,14 @@ export default function Component() {
         <div className="text-xl mx-auto dark:text-white">
           {session.user.name}
         </div>
-        <button onClick={() => signOut()}>로그아웃</button>
       </>
     );
   }
   return (
     <>
-      <div>로그인 되지 않음</div>
+      <Link>
+        <div>로그인이 필요합니다.</div>
+      </Link>
     </>
   );
 }
