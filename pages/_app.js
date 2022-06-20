@@ -6,7 +6,7 @@ import { SessionProvider } from "next-auth/react";
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-      <div className="bg-slate-50 dark:bg-slate-900">
+      <div className="bg-slate-50 dark:bg-slate-900 h-screen">
         <Head>
           <title>CNSA</title>
         </Head>
