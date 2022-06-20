@@ -128,7 +128,7 @@ export default function Form() {
                     <div
                       className={`${
                         student.did
-                          ? "bg-cyan-400 dark:bg-cyan-800 hover:bg-cyan-500 dark:hover:bg-cyan-700 transition"
+                          ? "bg-blue-400/70 dark:bg-blue-800/70 hover:bg-blue-500/70 dark:hover:bg-blue-700/70 transition"
                           : "bg-rose-400 dark:bg-rose-800 hover:bg-rose-500 dark:hover:bg-rose-700 transition"
                       } m-4 p-3 flex-1 text-white rounded-xl `}
                     >
