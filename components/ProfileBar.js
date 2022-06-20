@@ -12,7 +12,7 @@ export default function ProfileBar() {
             <div className="flex-1 text-lg font-bold my-auto dark:text-white ">
               <div>
                 <Login useBtn="invisible" />
-                <Link>
+                {/* <Link>
                   <div
                     className="text-sm m-2 p-2 rounded-xl bg-indigo-500 text-white"
                     onClick={() => {
@@ -21,7 +21,7 @@ export default function ProfileBar() {
                   >
                     로그아웃
                   </div>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className="mx-4 text-sm dark:text-white">
