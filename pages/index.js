@@ -4,8 +4,11 @@ import Login from "../components/login";
 
 export default function Home() {
   let today = new Date();
-
+  let year = today.getFullYear(); // 년도
+  let month = today.getMonth() + 1; // 월
+  let date = today.getDate(); // 날짜
   const week = ["일", "월", "화", "수", "목", "금", "토"];
+  let day = week[today.getDay()]; // 요일
 
   const [login, setLogin] = useState("invisible");
   const [main, setMain] = useState("visible");
@@ -129,7 +132,9 @@ export default function Home() {
       <div className="flex flex-col flex-wrap  justify-center bg-blue-400 dark:bg-sky-800 m-4 p-4 rounded-2xl text-white">
         <div className="text-center text-2xl font-bold">오늘 학사 일정</div>
         <div>
-          <div className="text-center text-lg mt-2">2022년 6월 16일</div>
+          <div className="text-center text-lg mt-2">
+            {year}년 {month}월 {day}일
+          </div>
           <div>
             <ol className="m-4">
               <li>7교시 2학년 학생탐구활동 3차 면담</li>
@@ -140,7 +145,9 @@ export default function Home() {
       </div>
       <div className="flex flex-col justify-center bg-violet-400 dark:bg-violet-800 m-4 rounded-2xl text-white ">
         <div className="text-center text-2xl font-bold mt-4">오늘 급식</div>
-        <div className="text-center text-lg mt-2">2022년 6월 16일</div>
+        <div className="text-center text-lg mt-2">
+          {year}년 {month}월 {day}일
+        </div>
         <div className="flex flex-wrap">
           <div className="m-4 rounded-xl flex-auto text-white p-4">
             <span className="font-bold text-lg">조식</span>
